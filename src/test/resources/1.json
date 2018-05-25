@@ -1,0 +1,178 @@
+{
+	"name": "example",
+	"tableName": "example",
+	"entityManagerId": 5,
+	"cls": "com.shangdao.phoenix.entity.Example",
+	"simpleFields": {
+		"score": {
+			"format": "SIMPLE",
+			"mappedBy": false,
+			"joinType": null,
+			"targetEntity": "java.lang.Integer",
+			"joinTable": "example",
+			"joinColumn": null,
+			"inverseJoinColumn": null,
+			"column": "score"
+		},
+		"createdAt": {
+			"format": "SIMPLE",
+			"mappedBy": false,
+			"joinType": null,
+			"targetEntity": "java.util.Date",
+			"joinTable": "example",
+			"joinColumn": null,
+			"inverseJoinColumn": null,
+			"column": "created_at"
+		},
+		"lastModifiedAt": {
+			"format": "SIMPLE",
+			"mappedBy": false,
+			"joinType": null,
+			"targetEntity": "java.util.Date",
+			"joinTable": "example",
+			"joinColumn": null,
+			"inverseJoinColumn": null,
+			"column": "last_modified_at"
+		},
+		"name": {
+			"format": "SIMPLE",
+			"mappedBy": false,
+			"joinType": null,
+			"targetEntity": "java.lang.String",
+			"joinTable": "example",
+			"joinColumn": null,
+			"inverseJoinColumn": null,
+			"column": "name"
+		},
+		"id": {
+			"format": "SIMPLE",
+			"mappedBy": false,
+			"joinType": null,
+			"targetEntity": "long",
+			"joinTable": "example",
+			"joinColumn": null,
+			"inverseJoinColumn": null,
+			"column": "id"
+		},
+		"text": {
+			"format": "SIMPLE",
+			"mappedBy": false,
+			"joinType": null,
+			"targetEntity": "java.lang.String",
+			"joinTable": "example",
+			"joinColumn": null,
+			"inverseJoinColumn": null,
+			"column": "text"
+		}
+	},
+	"objectFields": {
+		"owner": {
+			"format": "OBJECT",
+			"mappedBy": false,
+			"joinType": "MANY_TO_ONE",
+			"targetEntity": "com.shangdao.phoenix.entity.User",
+			"joinTable": "example",
+			"joinColumn": "owner_id",
+			"inverseJoinColumn": null,
+			"column": null
+		},
+		"manager": {
+			"format": "OBJECT",
+			"mappedBy": false,
+			"joinType": "MANY_TO_ONE",
+			"targetEntity": "com.shangdao.phoenix.entity.User",
+			"joinTable": "example",
+			"joinColumn": "manager_id",
+			"inverseJoinColumn": null,
+			"column": null
+		},
+		"ownerDepartment3": {
+			"format": "OBJECT",
+			"mappedBy": false,
+			"joinType": "MANY_TO_ONE",
+			"targetEntity": "com.shangdao.phoenix.entity.Department",
+			"joinTable": "example",
+			"joinColumn": "owner_department_id3",
+			"inverseJoinColumn": null,
+			"column": null
+		},
+		"subscribers": {
+			"format": "OBJECT",
+			"mappedBy": false,
+			"joinType": "MANY_TO_MANY",
+			"targetEntity": "com.shangdao.phoenix.entity.User",
+			"joinTable": "example_subscriber",
+			"joinColumn": "example_id",
+			"inverseJoinColumn": "user_id",
+			"column": null
+		},
+		"ownerDepartment2": {
+			"format": "OBJECT",
+			"mappedBy": false,
+			"joinType": "MANY_TO_ONE",
+			"targetEntity": "com.shangdao.phoenix.entity.Department",
+			"joinTable": "example",
+			"joinColumn": "owner_department_id2",
+			"inverseJoinColumn": null,
+			"column": null
+		},
+		"members": {
+			"format": "OBJECT",
+			"mappedBy": false,
+			"joinType": "MANY_TO_MANY",
+			"targetEntity": "com.shangdao.phoenix.entity.User",
+			"joinTable": "example_member",
+			"joinColumn": "example_id",
+			"inverseJoinColumn": "user_id",
+			"column": null
+		},
+		"ownerDepartment1": {
+			"format": "OBJECT",
+			"mappedBy": false,
+			"joinType": "MANY_TO_ONE",
+			"targetEntity": "com.shangdao.phoenix.entity.Department",
+			"joinTable": "example",
+			"joinColumn": "owner_department_id1",
+			"inverseJoinColumn": null,
+			"column": null
+		},
+		"state": {
+			"format": "OBJECT",
+			"mappedBy": false,
+			"joinType": "MANY_TO_ONE",
+			"targetEntity": "com.shangdao.phoenix.entity.State",
+			"joinTable": "example",
+			"joinColumn": "state_id",
+			"inverseJoinColumn": null,
+			"column": null
+		},
+		"logs": {
+			"format": "OBJECT",
+			"mappedBy": true,
+			"joinType": "ONE_TO_MANY",
+			"targetEntity": "com.shangdao.phoenix.entity.ExampleLog",
+			"joinTable": "example_log",
+			"joinColumn": "entity_id",
+			"inverseJoinColumn": null,
+			"column": null
+		},
+		"tags": {
+			"format": "OBJECT",
+			"mappedBy": true,
+			"joinType": "ONE_TO_MANY",
+			"targetEntity": "com.shangdao.phoenix.entity.ExampleTag",
+			"joinTable": "example_tag",
+			"joinColumn": "entity_id",
+			"inverseJoinColumn": null,
+			"column": null
+		}
+	},
+	"entityService": {
+		
+	},
+	"ownerEntity": true,
+	"logEntity": true,
+	"projectEntity": true,
+	"tagEntity": true,
+	"stateMachineEntity": true
+}

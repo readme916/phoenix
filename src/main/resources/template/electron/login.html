@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>登录</title>
+        <link rel="stylesheet" type="text/css" href="libs/easyui/themes/material/easyui.css">
+        <link rel="stylesheet" type="text/css" href="libs/easyui/themes/icon.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+        <script src="http://rescdn.qqmail.com/node/ww/wwopenmng/js/sso/wwLogin-1.0.0.js"></script>
+
+    </head>
+    <body onload='document.login_form.username.focus();' style="background:url(assets/images/login_bg.jpg) repeat 0 0;">
+        <div id="login_block">
+            <div class="float_right" id="work_weixin">
+                
+            </div>
+            <div class="float_left">
+                <div style="text-align:center;padding-bottom:38px;"><img src="assets/images/login_title.png" /></div>
+
+                <form name='login_form' id="login_form" action='/login' method='POST'>
+                    <table cellpadding="5">
+                        <tr><td width="70">Username:</td><td><input type='text'  class="easyui-textbox" data-options="required:true" name='username' value='' style="width:200px"></td></tr>
+                        <tr><td>Password:</td><td><input type='password' class="easyui-textbox" data-options="required:true" name='password'  style="width:200px" /></td></tr>
+                        <tr><td></td><td><input type='checkbox' name='remember-me' id="remember-me" /><label for="remember-me">Remember me.</label></td></tr>
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td>
+                                <input name="submit" type="submit" class="login_submit" value="Login"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="color:#ccc;">
+                                <br />
+                                <br />
+                                MagicUI is a  Javascript Framework for webapps.
+                                <br />
+                                A jquery and easyui-based freeware.
+                                <br />
+                                All copyright reserved by Shangdao technology.
+                                <br />
+                                Powered by <a href="http://www.magicksoft.com">Magicksoft</a>.
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <script  th:inline="javascript">
+        if (typeof module === 'object') {
+        window.jQuery = window.$ = module.exports;
+        }
+
+        window.WwLogin({
+        "id" : "work_weixin",
+                "appid" :[[${appid}]],
+                "agentid" : [[${agentid}]],
+                "redirect_uri" :[[${redirect_uri}]],
+                "state" : "",
+                "href" : "",
+        });
+        </script>        
+        <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript" src="libs/easyui/jquery.easyui.min.js"></script>
+        <script type="text/javascript" src="assets/js/formatters.js"></script>
+        <script type="text/javascript" src="assets/js/common.js"></script>
+    </body>
+</html>

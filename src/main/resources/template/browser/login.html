@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>登录</title>
+        <script src="http://rescdn.qqmail.com/node/ww/wwopenmng/js/sso/wwLogin-1.0.0.js"></script>
+
+    </head>
+    <body>
+        <div id="login_block">
+            <div class="float_right" id="work_weixin">
+                
+            </div>
+            <div class="float_left">
+                <form id="login_form" action="/login" method="POST">
+                    <table cellpadding="5">
+                        <tr><td width="70">Username:</td><td><input type='text'  class="easyui-textbox" data-options="required:true" name="username" value='' style="width:200px"></td></tr>
+                        <tr><td>Password:</td><td><input type="password" name="password"  style="width:200px" /></td></tr>
+                        <tr><td></td><td><input type="checkbox" name="remember-me" id="remember-me" /><label for="remember-me">Remember me.</label></td></tr>
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td>
+                                <input name="submit" type="submit" class="login_submit" value="Login"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="color:#ccc;">
+             						开发账号：developer <br/>
+             						密码：123456
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <script  th:inline="javascript">
+        window.WwLogin({
+        "id" : "work_weixin",
+                "appid" :[[${appid}]],
+                "agentid" : [[${agentid}]],
+                "redirect_uri" :[[${redirect_uri}]],
+                "state" : "",
+                "href" : "",
+        });
+        </script>        
+    </body>
+</html>
